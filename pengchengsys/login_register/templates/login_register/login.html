@@ -11,6 +11,7 @@
 <body>
     <div class="container">
         <form class="login_form">
+            {% csrf_token %}
             <div class="login_table_div">
                 {% if err_info%}
                     <p id="err_info_p"><strong>{{ err_info }}</strong></p>
