@@ -1,17 +1,17 @@
 body{
-    background: url('login_background.png');
+    background: url('register_background.jpg');
 }
 
-.login_table_div{
+.register_table_div{
     margin-left: 40%;
     margin-right: 40%;
     margin-top: 10%;
     border: 2px solid grey;
-    border-radius: 8px;
+    border-radius: 10px;
     overflow: auto;
 }
 
-#login_table{
+#register_table{
     margin: auto;
     padding-top: 15px;
     padding-bottom: 10px;
@@ -23,8 +23,12 @@ body{
 }
 
 .button_area{
-    margin-left: 40%;
+    margin-left: 30%;
     margin-bottom: 10px;
+}
+
+#reset_button{
+    margin-left: 10px;
 }
 
 .link_area{
@@ -32,6 +36,6 @@ body{
     margin-bottom: 10px;
 }
 
-#go_to_register{
+#go_to_login{
     margin-left: 10px;
 }
