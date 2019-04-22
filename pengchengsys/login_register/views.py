@@ -3,7 +3,7 @@ from django.contrib.auth import authenticate, login
 
 
 # Create your views here.
-def login(request):
+def my_login(request):
     context = {}
     if request.method == 'GET':
         return render(request, 'login_register/login.html', context)
@@ -12,7 +12,7 @@ def login(request):
         password = request.POST['password']
         user = authenticate(request, username=user_name, password=password)
         if user is not None:
-            login(request)
+            login(request, user)
             return render(request, 'login_register/home.html')
         else:
             context["err_info"] = "用户名和密码不正确！"
