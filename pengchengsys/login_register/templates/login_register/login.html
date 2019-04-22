@@ -1,3 +1,7 @@
+{% load static %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'login_register/login.css' %}">
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,6 +9,25 @@
     <title>登录</title>
 </head>
 <body>
-    <h1>这是登录界面！</h1>
+    <div class="container">
+        <form class="login_form">
+            <div class="login_table_div">
+                <table>
+                    <tr>
+                        <td><label>用户名：</label></td>
+                        <td><input type="text" placeholder="请输入用户名"></td>
+                    </tr>
+                    <tr>
+                        <td><label>密码：</label></td>
+                        <td><input type="password" placeholder="请输入密码"></td>
+                    </tr>
+                    <tr>
+                        <td><input type="button" value="登录"></td>
+                        <td><input type="button" value="重置"></td>
+                    </tr>
+                </table>
+            </div>
+        </form>
+    </div>
 </body>
 </html>
