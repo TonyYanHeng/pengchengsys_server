@@ -3,8 +3,8 @@ from django.shortcuts import render
 
 # Create your views here.
 def login(request):
-    pass
+    return render(request, 'login_register/login.html')
 
 
 def register(request):
-    pass
+    return render(request, 'login_register/register.html')
