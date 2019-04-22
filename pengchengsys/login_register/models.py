@@ -5,15 +5,15 @@ from django.contrib.auth.models import (
 
 
 class MyUserManager(BaseUserManager):
-    def create_user(self, name, phone_num, password=None):
+    def create_user(self, user_name, phone_num, password=None):
         """
         Creates and saves a User with the given name, phone number and password.
         """
-        if not name:
+        if not user_name:
             raise ValueError('Users must have a name!')
 
         user = self.model(
-            name=name,
+            user_name=user_name,
             phone_num=phone_num,
         )
 
@@ -21,12 +21,12 @@ class MyUserManager(BaseUserManager):
         user.save(using=self._db)
         return user
 
-    def create_superuser(self, name, phone_num, password):
+    def create_superuser(self, user_name, phone_num, password):
         """
         Creates and saves a superuser with the given name, phone number and password.
         """
         user = self.create_user(
-            name,
+            user_name=user_name,
             phone_num=phone_num,
             password=password,
         )
@@ -36,18 +36,18 @@ class MyUserManager(BaseUserManager):
 
 
 class MyUser(AbstractBaseUser):
-    name = models.CharField(max_length=128)
+    user_name = models.CharField(max_length=128)
     phone_num = models.BigIntegerField()
     is_active = models.BooleanField(default=True)
     is_admin = models.BooleanField(default=False)
 
     objects = MyUserManager()
 
-    USERNAME_FIELD = 'name'
+    USERNAME_FIELD = 'user_name'
     REQUIRED_FIELDS = ['phone_num']
 
     def __str__(self):
-        return self.name
+        return self.user_name
 
     def has_perm(self, perm, obj=None):
         "Does the user have a specific permission?"
