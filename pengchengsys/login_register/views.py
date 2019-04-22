@@ -12,7 +12,7 @@ def login(request):
         password = request.POST['password']
         user = authenticate(request, username=user_name, password=password)
         if user is not None:
-            login(request, user)
+            login(request)
             return render(request, 'login_register/home.html')
         else:
             context["err_info"] = "用户名和密码不正确！"
