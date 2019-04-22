@@ -19,11 +19,11 @@
                 <table id="login_table">
                     <tr>
                         <td><label>用户名：</label></td>
-                        <td><input type="text" placeholder="请输入用户名"></td>
+                        <td><input type="text" placeholder="请输入用户名" id="user_name"></td>
                     </tr>
                     <tr>
                         <td><label>密码：</label></td>
-                        <td><input type="password" placeholder="请输入密码"></td>
+                        <td><input type="password" placeholder="请输入密码" id="password"></td>
                     </tr>
                     <tr>
                         <td><input type="submit" value="登录" formmethod="post" formaction="{% url 'login_register:login' %}"></td>
