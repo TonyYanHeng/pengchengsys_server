@@ -1,23 +1,27 @@
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render
 from django.contrib.auth import authenticate, login, logout
 from .models import MyUser
 import re
 
 
-# Create your views here.
 def my_login(request):
     context = {}
     if request.method == 'GET':
         return render(request, 'login_register/login.html', context)
     elif request.method == 'POST':
         user_name = request.POST['user_name']
-        password = request.POST['password']
-        user = authenticate(request, username=user_name, password=password)
-        if user is not None:
-            login(request, user)
-            return render(request, 'home/home.html')
-        else:
-            context["err_info"] = "用户名和密码不正确！"
+        try:
+            user = MyUser.objects.get(user_name=user_name)
+            password = request.POST['password']
+            user = authenticate(request, username=user_name, password=password)
+            if user is not None:
+                login(request, user)
+                return render(request, 'home/home.html')
+            else:
+                context["err_info"] = "密码不正确！"
+                return render(request, 'login_register/login.html', context)
+        except MyUser.DoesNotExist:
+            context["err_info"] = "用户名不存在！"
             return render(request, 'login_register/login.html', context)
 
 
