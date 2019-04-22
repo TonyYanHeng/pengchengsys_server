@@ -8,7 +8,7 @@ def login(request):
     if request.method == 'GET':
         return render(request, 'login_register/login.html', context)
     elif request.method == 'POST':
-        user_name = request.POST['username']
+        user_name = request.POST['user_name']
         password = request.POST['password']
         user = authenticate(request, username=user_name, password=password)
         if user is not None:
