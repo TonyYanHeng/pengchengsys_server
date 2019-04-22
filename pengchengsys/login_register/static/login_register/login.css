@@ -1,5 +1,18 @@
 .login_table_div{
-    margin: auto;
-    padding-left: 20px;
+    margin-left: 20%;
+    margin-right: 20%;
+    margin-top: 10%;
     border: 2px solid red;
+    border-radius: 8x;
+}
+
+#login_table{
+    margin: auto;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+#err_info_p{
+    color: red;
+    margin: auto;
 }

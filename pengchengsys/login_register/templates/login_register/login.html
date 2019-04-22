@@ -12,7 +12,10 @@
     <div class="container">
         <form class="login_form">
             <div class="login_table_div">
-                <table>
+                {% if err_info%}
+                    <p id="err_info_p"><strong>{{ err_info }}</strong></p>
+                {% endif%}
+                <table id="login_table">
                     <tr>
                         <td><label>用户名：</label></td>
                         <td><input type="text" placeholder="请输入用户名"></td>
