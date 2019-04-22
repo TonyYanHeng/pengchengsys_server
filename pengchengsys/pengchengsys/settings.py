@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'login_register.apps.LoginRegisterConfig',
+    'home.apps.HomeConfig',
 ]
 
 MIDDLEWARE = [
@@ -125,3 +126,5 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 AUTH_USER_MODEL = 'login_register.MyUser'
+
+LOGIN_URL = '/user/login/'

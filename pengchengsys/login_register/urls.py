@@ -9,4 +9,5 @@ app_name = 'login_register'
 urlpatterns = [
     path('login/', views.my_login, name='login'),
     path('register/', views.register, name='register'),
+    path('logout/', views.my_logout, name='logout'),
 ]
