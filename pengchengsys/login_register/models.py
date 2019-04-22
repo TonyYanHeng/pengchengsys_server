@@ -36,7 +36,7 @@ class MyUserManager(BaseUserManager):
 
 
 class MyUser(AbstractBaseUser):
-    user_name = models.CharField(max_length=128)
+    user_name = models.CharField(max_length=128, unique=True)
     phone_num = models.BigIntegerField()
     is_active = models.BooleanField(default=True)
     is_admin = models.BooleanField(default=False)
