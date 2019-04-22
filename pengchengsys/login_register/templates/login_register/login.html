@@ -10,7 +10,7 @@
 </head>
 <body>
     <div class="container">
-        <form class="login_form">
+        <form class="login_form" method="post" action="{% url 'login_register:login' %}">
             {% csrf_token %}
             <div class="login_table_div">
                 {% if err_info%}
@@ -26,7 +26,7 @@
                         <td><input type="password" placeholder="请输入密码" id="password"></td>
                     </tr>
                     <tr>
-                        <td><input type="submit" value="登录" formmethod="post" formaction="{% url 'login_register:login' %}"></td>
+                        <td><input type="submit" value="登录"></td>
                         <td><input type="button" value="重置"></td>
                     </tr>
                 </table>
